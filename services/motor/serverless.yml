@@ -1,0 +1,32 @@
+service: mini-motor
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  region: us-east-1
+  stage: ${opt:stage, 'dev'}
+  runtime: nodejs24.x
+  architecture: arm64
+  memorySize: 256
+  timeout: 10
+  logRetentionInDays: 14
+  environment:
+    STAGE: ${sls:stage}
+  tags:
+    projeto: mini-motor
+  stackTags:
+    projeto: mini-motor
+
+build:
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+
+functions:
+  health:
+    handler: src/handlers/health.handler
+    events:
+      - httpApi:
+          path: /health
+          method: get

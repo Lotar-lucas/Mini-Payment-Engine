@@ -1,0 +1,13 @@
+node_modules/
+.serverless/
+.esbuild/
+dist/
+.env
+.env.*
+!.env.example
+
+# Docs
+docs/tecnico/1.1-fundacao.md
+
+# Local Claude Code
+CLAUDE.local.md

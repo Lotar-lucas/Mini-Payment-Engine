@@ -1,0 +1,14 @@
+{
+  "name": "@mini-motor/motor",
+  "private": true,
+  "scripts": {
+    "deploy": "serverless deploy --aws-profile Lotar",
+    "remove": "serverless remove --aws-profile Lotar",
+    "logs:health": "serverless logs -f health --aws-profile Lotar",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^24.19.2"
+  }
+}

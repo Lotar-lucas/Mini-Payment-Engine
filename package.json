@@ -1,0 +1,27 @@
+{
+  "name": "mini-payment-engine",
+  "private": true,
+  "workspaces": [
+    "services/*"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "deploy": "npm run deploy -w services/motor",
+    "remove": "npm run remove -w services/motor",
+    "logs:health": "npm run logs:health -w services/motor",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint . --fix",
+    "format": "prettier --write \"**/*.{ts,js,json,md,yml}\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.7",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.2"
+  }
+}
