@@ -3,6 +3,13 @@
 - IaC do projeto: Serverless Framework v4 (gera CloudFormation). Não migrar para CDK.
 - Perfil AWS: `Lotar`, região `us-east-1`.
 
+## Autenticação (antes de deploy ou comandos AWS)
+
+- AWS: `aws login --profile Lotar` (credencial temporária; repetir quando der "session has expired").
+- Serverless Framework v4: `serverless login` (uma vez por máquina).
+- No Claude Code, rodar com o prefixo `!` (ex.: `! aws login --profile Lotar`) para a saída cair na conversa.
+- Conferir a sessão AWS: `aws sts get-caller-identity --profile Lotar`.
+
 ## Dependências (npm workspaces)
 
 - Instalar tudo: `npm install` (ou `npm ci` para seguir o lockfile à risca), sempre na raiz.
